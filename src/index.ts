@@ -1,22 +1,17 @@
 #!/usr/bin/env node
 
-import { program } from "commander";
-
+import { program } from 'commander'
+import path from 'path'
+import fs from 'fs'
 // program.option("--first").option("-s, --separator <char>");
 
-// Adding action
-program.action(() => {
-  console.log(`hello`);
-});
-
-program
-  .command("generate <type>")
-  .description("Generate code for a given type")
-  .action(async (type: string) => {
-    console.log(type);
-  });
+const commandPaths = path.join(__dirname, './commands')
+fs.readdirSync(commandPaths).forEach(file => {
+  const command = require(path.join(commandPaths, file))
+  program.addCommand(command)
+})
 // Execute program
-program.parse();
+program.parse(process.argv)
 
 // const options = program.opts();
 // const limit = options.first ? 1 : undefined;
