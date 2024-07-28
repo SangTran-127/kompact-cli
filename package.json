@@ -4,9 +4,11 @@
   "description": "A cli for generate code base and project using kompact",
   "main": "index.js",
   "bin": {
-    "practice": "./index.js"
+    "practice": "./dist/index.js"
   },
   "scripts": {
+    "dev": "tsc -w",
+    "link": "yarn --global unlink kompact-cli && yarn --global link kompact-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

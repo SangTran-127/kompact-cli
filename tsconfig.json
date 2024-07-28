@@ -2,6 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Node LTS",
   "_version": "18.1.0",
+  "include": [
+    "src"
+  ],
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
