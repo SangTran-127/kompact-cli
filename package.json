@@ -1,0 +1,18 @@
+{
+  "name": "kompact-cli",
+  "version": "1.0.0",
+  "description": "A cli for generate code base and project using kompact",
+  "main": "index.js",
+  "bin": {
+    "practice": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
