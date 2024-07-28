@@ -2,13 +2,14 @@
   "name": "kompact-cli",
   "version": "1.0.0",
   "description": "A cli for generate code base and project using kompact",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "practice": "./dist/index.js"
+    "kompact": "dist/index.js"
   },
   "scripts": {
+    "build": "tsc",
     "dev": "tsc -w",
-    "link": "yarn --global unlink kompact-cli && yarn --global link kompact-cli",
+    "link": "yarn unlink --global kompact-cli && yarn link --global kompact-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,5 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
   }
 }
