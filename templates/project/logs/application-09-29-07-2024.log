@@ -1,0 +1,2 @@
+29-07-24 09:53::30::info::/favicon.ico::b39cdf37-421f-486c-b2a7-73035f279729::Input params type GET::{}
+29-07-24 09:53::30::error::/favicon.ico::b39cdf37-421f-486c-b2a7-73035f279729::Error 404 - 1722221610199ms - Response: {"status":404}::{"message":"Not found"}

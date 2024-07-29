@@ -44,3 +44,5 @@ export class BookService {
     this.bookList.splice(bookIndex, 1)
   }
 }
+
+export const bookService = new BookService()
