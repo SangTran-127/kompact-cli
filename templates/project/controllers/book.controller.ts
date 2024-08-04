@@ -31,7 +31,7 @@ export class BookController {
     }).send(res)
   }
 
-  @Get(':id')
+  @Get('/:id')
   getBookById(@Param('id') bookId: string, res: Response) {
     new SuccessResponse({
       metadata: bookService.findOne(Number(bookId)),
@@ -39,7 +39,7 @@ export class BookController {
     }).send(res)
   }
 
-  @Patch(':id')
+  @Patch('/:id')
   updateBook(
     @Param('id') bookId: string,
     @Body() updateBookDto: UpdateBookDto,
@@ -51,7 +51,7 @@ export class BookController {
     }).send(res)
   }
 
-  @Delete()
+  @Delete('/:id')
   deleteBook(@Param('id') bookId: string, res: Response) {
     new SuccessResponse({
       metadata: bookService.remove(Number(bookId)),
