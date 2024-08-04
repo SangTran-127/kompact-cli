@@ -8,7 +8,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && kompact create a",
     "dev": "tsc -w",
     "link": "yarn unlink --global kompact-cli && yarn link --global kompact-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
