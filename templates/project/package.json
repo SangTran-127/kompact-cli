@@ -11,6 +11,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@sangtrandev/kompact": "^0.0.17"
+    "@sangtrandev/kompact": "^0.0.19"
   }
 }

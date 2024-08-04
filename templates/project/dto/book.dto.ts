@@ -4,14 +4,14 @@ export type Book = {
   id: number
   title: string
   author: string
-  publishedDate: string
+  publishedYear: number
 }
 
 export class CreateBookDto {
   id: number
   title: string
   author: string
-  publishedDate: string
+  publishedYear: number
 }
 
 export class UpdateBookDto extends PartialType(CreateBookDto) {}

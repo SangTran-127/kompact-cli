@@ -21,10 +21,10 @@
   resolved "https://registry.yarnpkg.com/@ioredis/commands/-/commands-1.2.0.tgz#6d61b3097470af1fdbbe622795b8921d42018e11"
   integrity sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==
 
-"@sangtrandev/kompact@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@sangtrandev/kompact/-/kompact-0.0.17.tgz#5bba2ae2597dd6656655107ca32581eb1c3d6b62"
-  integrity sha512-ohkZH5gYsBvkjPCNc9dlsK2OrTOwiTWUZxz7FmIU9l7elZlJiDhJdu0Kzb9lywIRuxcgygtYUCM4mgslEf4gLA==
+"@sangtrandev/kompact@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@sangtrandev/kompact/-/kompact-0.0.19.tgz#da2332cf6ca4a2d4a43b4a1c50fdc704d6adf727"
+  integrity sha512-Zq43vutkpPNryqGdm2dXTiCv4pRzEa1TFWB9lWShQXwfIEUMy+D2Q559I8zNKAeDDYo+MXT3wHFv7xy4Tv4C/A==
   dependencies:
     compression "^1.7.4"
     express "^4.19.2"

@@ -17,14 +17,17 @@ import { CreateBookDto, UpdateBookDto } from '../dto/book.dto'
 export class BookController {
   @Get()
   getAllBook(_: Request, res: Response) {
+    console.log(bookService.getAllBook())
     new SuccessResponse({
-      metadata: bookService.getAllBook(),
+      metadata: [],
       message: 'Get all book successfully',
+      statusCode: 200,
     }).send(res)
   }
 
   @Post()
   addBook(@Body() addBookDto: CreateBookDto, res: Response) {
+    console.log(`add book call`)
     new SuccessResponse({
       metadata: bookService.createBook(addBookDto),
       message: 'Add book successfully',
