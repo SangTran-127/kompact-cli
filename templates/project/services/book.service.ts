@@ -36,12 +36,12 @@ export class BookService {
     return updatedBook
   }
 
-  remove(id: number): void {
+  remove(id: number): Book[] {
     const bookIndex = this.bookList.findIndex(book => book.id === id)
     if (bookIndex === -1) {
       throw new NotFoundError(`Book with ID ${id} not found`)
     }
-    this.bookList.splice(bookIndex, 1)
+    return this.bookList.splice(bookIndex, 1)
   }
 }
 
