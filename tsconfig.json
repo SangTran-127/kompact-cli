@@ -5,6 +5,9 @@
   "include": [
     "src"
   ],
+  "exclude": [
+    "templates/*"
+  ],
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",

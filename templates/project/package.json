@@ -12,5 +12,8 @@
   "description": "",
   "dependencies": {
     "@sangtrandev/kompact": "^0.0.19"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
   }
 }

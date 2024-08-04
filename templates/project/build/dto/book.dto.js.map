@@ -1,0 +1,1 @@
+{"version":3,"file":"book.dto.js","sourceRoot":"","sources":["../../dto/book.dto.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,sBAAsB,CAAA;AASlD,MAAM,OAAO,aAAa;IACxB,EAAE,CAAQ;IACV,KAAK,CAAQ;IACb,MAAM,CAAQ;IACd,aAAa,CAAQ;CACtB;AAED,MAAM,OAAO,aAAc,SAAQ,WAAW,CAAC,aAAa,CAAC;CAAG"}
