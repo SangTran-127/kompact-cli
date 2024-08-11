@@ -6,12 +6,8 @@
       "syntax": "typescript",
       "decorators": true
     },
-    "transform": {
-      "alias": {
-        "@/*": "./src/*"
-      }
-    },
     "baseUrl": "./"
+    // Currently not support @alias because of swc don't add .js 
   },
   "module": {
     "type": "es6",

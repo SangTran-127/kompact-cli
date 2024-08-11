@@ -1,5 +1,5 @@
 import { NotFoundError } from 'kompact'
-import { Book, CreateBookDto, UpdateBookDto } from '@dto/book.dto'
+import { Book, CreateBookDto, UpdateBookDto } from '../dto/book.dto'
 
 export class BookService {
   private readonly bookList: Book[] = []
