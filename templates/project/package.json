@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "kompact start",
-    "start:prod": "node dist/app",
     "test": "jest"
   },
   "keywords": [],
@@ -14,7 +13,7 @@
     "kompact": "^0.0.19"
   },
   "devDependencies": {
-    "kompact-cli": "^0.0.1",
+    "kompact-cli": "^0.0.2",
     "@types/express": "^4.17.17",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^7.0.0",

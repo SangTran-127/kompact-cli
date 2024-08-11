@@ -1,11 +1,13 @@
 import { Command } from 'commander'
 import path from 'path'
 import fs from 'fs'
+import url from 'url'
 import { execSync } from 'child_process'
-import { copyDirectory } from '../utils/copy'
+import { copyDirectory } from '../utils/index.js'
 import { input, select } from '@inquirer/prompts'
 import figlet from 'figlet'
 import gradient from 'gradient-string'
+import chalk from 'chalk'
 
 type PackageManager = 'npm' | 'yarn' | 'pnpm'
 
@@ -24,7 +26,7 @@ export const command = new Command('create')
     createProjectFromTemplate(name, packageType)
     figlet('Kompact', (err, data) => {
       if (err) {
-        console.log('Something went wrong...')
+        console.log(chalk.red('Something went wrong...'))
         console.dir(err)
         return
       }
@@ -70,6 +72,8 @@ function createProjectFromTemplate(
   projectName: string,
   packageManager: PackageManager
 ) {
+  const __filename = url.fileURLToPath(import.meta.url)
+  const __dirname = path.dirname(__filename)
   const currentPath = process.cwd()
   const projectPath =
     projectName === '.' ? currentPath : path.join(currentPath, projectName)

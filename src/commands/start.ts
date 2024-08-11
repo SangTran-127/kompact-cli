@@ -1,32 +1,53 @@
+import chalk from 'chalk'
+import { spawn } from 'child_process'
 import { Command } from 'commander'
-import path from 'path'
 import fs from 'fs'
-import { exec } from 'child_process'
+import path from 'path'
 
 export const command = new Command('start')
   .option('-w', '--watch')
   .description('Watch for file changes and restart automatically')
   .action(options => {
-    const appPath = path.resolve(process.cwd(), 'app.ts')
+    // process.cwd() will be package.json
+    const appPath = path.join(process.cwd(), '/src/app.ts')
     if (!fs.existsSync(appPath)) {
+      console.error(appPath)
       console.error('Error: app.ts not found in the current directory.')
       process.exit(1)
     }
     const command = options.watch ? `tsx watch ${appPath}` : `tsx ${appPath}`
     console.log(
-      `Starting the kompact project${options.watch ? ' in watch mode' : ''}...`
+      chalk.green(
+        `Starting the kompact project${
+          options.watch ? ' in watch mode' : ''
+        }...`
+      )
     )
-    exec(command, (err, stdout, stderr) => {
-      if (err) {
-        console.error(`Error: ${err.message}`)
-        return
-      }
+    // Use spawn to run the command
+    const child = spawn(command, {
+      shell: true,
+      stdio: 'pipe',
+    })
 
-      if (stderr) {
-        console.error(`Stderr: ${stderr}`)
-        return
-      }
+    // Handle stdout
+    child.stdout.on('data', data => {
+      process.stdout.write(data)
+    })
 
-      console.log(stdout)
+    // Handle stderr
+    child.stderr.on('data', data => {
+      process.stderr.write(data)
+    })
+
+    // Handle exit
+    child.on('close', code => {
+      console.log(`Process exited with code ${code}`)
+      process.exit(code)
+    })
+
+    // Handle errors
+    child.on('error', err => {
+      console.error(`Error: ${err.message}`)
+      process.exit(1)
     })
   })
