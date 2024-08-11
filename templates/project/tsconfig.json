@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "outDir": "build",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@*": ["src/*"]
+    },
     "strict": true,
     "declaration": true,
     "moduleResolution": "Node",
@@ -17,7 +21,7 @@
     "strictPropertyInitialization": false,
   },
   "exclude": [
-    "build",
+    "dist",
     "node_modules",
     "**/*.spec.ts",
     "**/*.test.ts",

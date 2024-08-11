@@ -9,9 +9,9 @@ import {
   Request,
   Response,
   SuccessResponse,
-} from '@sangtrandev/kompact'
-import { bookService } from '../services/book.service'
-import { CreateBookDto, UpdateBookDto } from '../dto/book.dto'
+} from 'kompact'
+import { bookService } from '@services/book.service'
+import { CreateBookDto, UpdateBookDto } from '@dto/book.dto'
 
 @Controller('book')
 export class BookController {
@@ -46,7 +46,7 @@ export class BookController {
   updateBook(
     @Param('id') bookId: string,
     @Body() updateBookDto: UpdateBookDto,
-    res: Response
+    res: Response,
   ) {
     new SuccessResponse({
       metadata: bookService.update(Number(bookId), updateBookDto),

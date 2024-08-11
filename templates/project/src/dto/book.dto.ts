@@ -1,4 +1,4 @@
-import { PartialType } from '@sangtrandev/kompact'
+import { PartialType } from 'kompact'
 
 export type Book = {
   id: number

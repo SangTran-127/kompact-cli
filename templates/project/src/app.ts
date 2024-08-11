@@ -1,5 +1,5 @@
-import { KompactApp } from '@sangtrandev/kompact'
-import { BookController } from './controllers/book.controller'
+import { KompactApp } from 'kompact'
+import { BookController } from '@controllers/book.controller'
 
 const PORT = 3002
 
