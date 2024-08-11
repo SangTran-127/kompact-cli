@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import path from 'path'
 import { execSync } from 'child_process'
 import { copyDirectory } from '../utils/copy'
-import inquirer from 'inquirer'
+import { select } from '@inquirer/prompts'
 
 type PackageManager = 'npm' | 'yarn' | 'pnpm'
 
@@ -23,16 +23,24 @@ export const command = new Command('create')
   })
 
 async function promptPackageManager(): Promise<string> {
-  const answers = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'packageManager',
-      message: 'Which package manager would you like to use?',
-      choices: ['npm', 'yarn', 'pnpm'],
-    },
-  ])
+  const answers = await select({
+    message: 'Which package manager would you like to use?',
+    choices: [
+      {
+        name: 'npm',
+        value: 'npm',
+        description: 'npm is the most popular package manager',
+      },
+      {
+        name: 'yarn',
+        value: 'yarn',
+        description: 'yarn is an awesome package manager',
+      },
+    ],
+    // default: 'npm',
+  })
 
-  return answers.packageManager
+  return answers
 }
 
 function createProjectFromTemplate(

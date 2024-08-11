@@ -19,7 +19,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "commander": "^12.1.0",
-    "inquirer": "^10.1.7"
+    "@inquirer/prompts": "^5.3.8",
+    "commander": "^12.1.0"
   }
 }
