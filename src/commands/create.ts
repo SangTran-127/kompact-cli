@@ -1,8 +1,9 @@
 import { Command } from 'commander'
 import path from 'path'
+import fs from 'fs'
 import { execSync } from 'child_process'
 import { copyDirectory } from '../utils/copy'
-import { select } from '@inquirer/prompts'
+import { input, select } from '@inquirer/prompts'
 import figlet from 'figlet'
 import gradient from 'gradient-string'
 
@@ -15,11 +16,12 @@ enum EPackageManager {
 }
 
 export const command = new Command('create')
-  .argument('<project-name>', 'Name of the project or use . for current folder')
+  .argument('[project-name]', 'Name of the project or use . for current folder')
   .description('Create a new Kompact project')
   .action(async projectName => {
     const packageType = await promptPackageManager()
-    createProjectFromTemplate(projectName, packageType)
+    const name = projectName || (await promptProjectName())
+    createProjectFromTemplate(name, packageType)
     figlet('Kompact', (err, data) => {
       if (err) {
         console.log('Something went wrong...')
@@ -56,6 +58,14 @@ async function promptPackageManager(): Promise<PackageManager> {
   return answers
 }
 
+async function promptProjectName(): Promise<string> {
+  const answers = await input({
+    message: 'Enter your project',
+  })
+
+  return answers
+}
+
 function createProjectFromTemplate(
   projectName: string,
   packageManager: PackageManager
@@ -64,11 +74,16 @@ function createProjectFromTemplate(
   const projectPath =
     projectName === '.' ? currentPath : path.join(currentPath, projectName)
   const templateDir = path.join(__dirname, '../../templates/project')
-  copyDirectory(templateDir, projectPath, projectName)
+  copyDirectory(templateDir, projectPath)
   execSync(packageCommand[packageManager].install, {
     cwd: projectPath,
     stdio: 'inherit',
   })
+  // change project name project
+  const packageJsonPath = path.join(projectPath, 'package.json')
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
+  packageJson.name = projectName
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2))
 }
 
 const packageCommand = {

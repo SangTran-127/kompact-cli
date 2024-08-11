@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "build",
+    "strict": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
+  },
+  "exclude": [
+    "build",
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "example"
+  ]
+}
