@@ -6,6 +6,11 @@
       "syntax": "typescript",
       "decorators": true
     },
+    "transform": {
+      "alias": {
+        "@/*": "./src/*"
+      }
+    },
     "baseUrl": "./"
   },
   "module": {
