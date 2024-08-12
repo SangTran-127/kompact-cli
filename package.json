@@ -1,6 +1,6 @@
 {
   "name": "kompact-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A cli for generate code base and project using kompact",
   "main": "dist/index.js",
   "type": "module",
