@@ -10,8 +10,8 @@ import {
   Response,
   SuccessResponse,
 } from 'kompact'
-import { bookService } from '@services/book.service'
-import { CreateBookDto, UpdateBookDto } from '@dto/book.dto'
+import { bookService } from '../services/book.service'
+import { CreateBookDto, UpdateBookDto } from '../dto/book.dto'
 
 @Controller('book')
 export class BookController {

@@ -1,6 +1,6 @@
 {
   "name": "kompact-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A cli for generate code base and project using kompact",
   "main": "dist/index.js",
   "type": "module",
@@ -19,7 +19,6 @@
   "devDependencies": {
     "@types/figlet": "^1.5.8",
     "@types/gradient-string": "^1.1.6",
-    "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
