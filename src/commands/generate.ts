@@ -9,6 +9,7 @@ import gradient from 'gradient-string'
 enum GenerateOption {
   Controller = 'c',
 }
+// TODO: Add controller on main.ts file
 
 export const command = new Command('generate')
   .option('-c <name>', 'Add the controller name')
